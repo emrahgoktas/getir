@@ -14,7 +14,7 @@ import {
   SITE_NAME,
   SITE_URL,
 } from "@/lib/constants";
-import { neighborhoodHeadings } from "@/lib/seo";
+import { getNeighborhoodSeo, neighborhoodHeadings } from "@/lib/seo";
 
 type Props = {
   params: Promise<{ bolge: string; mahalle: string }>;
@@ -32,23 +32,32 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const result = findNeighborhood(bolge, mahalle);
   if (!result) return {};
   const { neighborhood } = result;
+  const seo = getNeighborhoodSeo(bolge, mahalle);
+
+  const title =
+    seo?.title ??
+    `${neighborhood.name} Çilingir 15 Dk Kapıda | Acil Çilingir Hizmeti`;
+  const description =
+    seo?.description ??
+    `${neighborhood.name} nöbetçi çilingir ve 7/24 çilingir. Çilingir 15 Dk Kapıda, hasarsız kilit açma, gece çilingir. ${neighborhood.referenceLandmark}.`;
+  const keywords = seo?.keywords ?? [
+    `${neighborhood.name} çilingir`,
+    "acil çilingir hizmeti",
+    "nöbetçi çilingir",
+    "7/24 çilingir",
+    "hasarsız kilit açma",
+  ];
 
   return {
-    title: `${neighborhood.name} Çilingir 15 Dk Kapıda | Acil Çilingir Hizmeti`,
-    description: `${neighborhood.name} nöbetçi çilingir ve 7/24 çilingir. Çilingir 15 Dk Kapıda, hasarsız kilit açma, gece çilingir. ${neighborhood.referenceLandmark}.`,
-    keywords: [
-      `${neighborhood.name} çilingir`,
-      "acil çilingir hizmeti",
-      "nöbetçi çilingir",
-      "7/24 çilingir",
-      "hasarsız kilit açma",
-    ],
+    title,
+    description,
+    keywords,
     alternates: {
       canonical: `/cilingir/${bolge}/${mahalle}`,
     },
     openGraph: {
-      title: `${neighborhood.name} Çilingir 15 Dk Kapıda | Acil Çilingir Hizmeti`,
-      description: `${neighborhood.name} bölgesinde acil çilingir hizmeti. ${neighborhood.referenceLandmark}, ortalama ${neighborhood.avgResponseMinutes} dakika.`,
+      title,
+      description,
       locale: "tr_TR",
       type: "website",
     },
@@ -60,9 +69,15 @@ export default async function NeighborhoodPage({ params }: Props) {
   const result = findNeighborhood(bolge, mahalle);
   if (!result) notFound();
   const { region, neighborhood } = result;
+  const seo = getNeighborhoodSeo(bolge, mahalle);
+  const isMaslakLanding = bolge === "maslak-hatti" && mahalle === "maslak";
 
   const pageUrl = `${SITE_URL}/cilingir/${region.slug}/${neighborhood.slug}`;
   const imageUrl = `${SITE_URL}${region.image}`;
+  const defaultHeadings = neighborhoodHeadings(neighborhood.name);
+  const headline = seo
+    ? { title: seo.h1Title, hit: seo.h1Hit }
+    : splitStageHeadline(neighborhood.heroLine);
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -74,7 +89,9 @@ export default async function NeighborhoodPage({ params }: Props) {
     logo: `${SITE_URL}/getirlogo.png`,
     url: pageUrl,
     telephone: PHONE_TEL,
-    description: `${neighborhood.name} acil çilingir hizmeti. Çilingir 15 Dk Kapıda, hasarsız kilit açma, nöbetçi çilingir.`,
+    description:
+      seo?.jsonLdDescription ??
+      `${neighborhood.name} acil çilingir hizmeti. Çilingir 15 Dk Kapıda, hasarsız kilit açma, nöbetçi çilingir.`,
     priceRange: "$$",
     areaServed: {
       "@type": "Place",
@@ -92,7 +109,7 @@ export default async function NeighborhoodPage({ params }: Props) {
       longitude: neighborhood.longitude,
     },
     openingHours: "Mo-Su 00:00-23:59",
-    serviceType: [
+    serviceType: seo?.serviceTypes ?? [
       "acil çilingir hizmeti",
       "hasarsız kilit açma",
       "nöbetçi çilingir",
@@ -118,7 +135,18 @@ export default async function NeighborhoodPage({ params }: Props) {
   const siblingNeighborhoods = region.neighborhoods.filter(
     (n) => n.slug !== neighborhood.slug,
   );
-  const headings = neighborhoodHeadings(neighborhood.name);
+  const headings = {
+    work: seo?.h2Work ?? defaultHeadings.work,
+    services: seo?.h2Services ?? defaultHeadings.services,
+    siblings: seo?.h2Siblings ?? defaultHeadings.siblings,
+  };
+  const serviceItems = seo?.services ?? [
+    "Acil çilingir hizmeti — ev, ofis ve araç kapısı",
+    "Hasarsız kilit açma",
+    "7/24 çilingir ve gece çilingir",
+    "Garantili çilingir — kilit değişimi ve tamir",
+    "Nöbetçi çilingir — kasa ve çelik kapı",
+  ];
 
   return (
     <>
@@ -131,10 +159,18 @@ export default async function NeighborhoodPage({ params }: Props) {
         <StageHero
           compact
           live={`${neighborhood.name} · aktif ekibimiz sahada`}
-          kicker={`${region.name} · nöbetçi çilingir · 7/24 çilingir`}
-          {...splitStageHeadline(neighborhood.heroLine)}
-          sub={`${neighborhood.name} acil çilingir hizmeti`}
-          lead={`${neighborhood.referenceLandmark}. Hasarsız kilit açma, gece çilingir — konumuza ${neighborhood.avgResponseMinutes} dk mesafede.`}
+          kicker={
+            seo
+              ? "Maslak nöbetçi çilingir · 7/24 çilingir"
+              : `${region.name} · nöbetçi çilingir · 7/24 çilingir`
+          }
+          title={headline.title}
+          hit={headline.hit}
+          sub={seo?.h1Sub ?? `${neighborhood.name} acil çilingir hizmeti`}
+          lead={
+            seo?.lead ??
+            `${neighborhood.referenceLandmark}. Hasarsız kilit açma, gece çilingir — konumuza ${neighborhood.avgResponseMinutes} dk mesafede.`
+          }
           meterValue={neighborhood.avgResponseMinutes}
           ticker={region.neighborhoods.map((n) => n.name)}
           breadcrumb={
@@ -156,10 +192,15 @@ export default async function NeighborhoodPage({ params }: Props) {
           <div className="media-frame">
             <Image
               src={region.image}
-              alt={`${neighborhood.name} çilingir hizmet bölgesi`}
+              alt={
+                isMaslakLanding
+                  ? "Maslak çilingir hizmet bölgesi — plaza ve ofis hattı"
+                  : `${neighborhood.name} çilingir hizmet bölgesi`
+              }
               width={1400}
               height={788}
               sizes="(max-width: 768px) 100vw, 72rem"
+              priority={isMaslakLanding}
             />
           </div>
         </section>
@@ -167,11 +208,9 @@ export default async function NeighborhoodPage({ params }: Props) {
         <section className="section wrap" aria-label="Hizmetler">
           <h2>{headings.services}</h2>
           <ul className="service-list">
-            <li>Acil çilingir hizmeti — ev, ofis ve araç kapısı</li>
-            <li>Hasarsız kilit açma</li>
-            <li>7/24 çilingir ve gece çilingir</li>
-            <li>Garantili çilingir — kilit değişimi ve tamir</li>
-            <li>Nöbetçi çilingir — kasa ve çelik kapı</li>
+            {serviceItems.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
           </ul>
           <CallCtas variant="inline" />
         </section>

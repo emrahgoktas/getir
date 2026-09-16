@@ -138,13 +138,13 @@ export const regions: Region[] = [
       {
         slug: "maslak",
         name: "Maslak",
-        heroLine: "Maslak'ta Çilingir — Plaza ve Ofis Bölgesine Hızlı Müdahale",
+        heroLine: "Maslak Çilingir — 15 Dk",
         referenceLandmark: "Maslak Meydan yakını",
         avgResponseMinutes: "10-15",
         latitude: 41.1075,
         longitude: 29.0225,
         description:
-          "Maslak Meydan yakını kulelerinde gece kilitlenen ofis, sabah toplantısından daha pahalıya mal olur. Lobi turnikesi ve kat kartı prosedürünü bildiğimiz için 10-15 dakikada ilgili kata çıkıyoruz. Çelik kasa ve ofis silindiri işleri bu meydan çevresinde konut işinden daha sık.",
+          "Maslak acil çilingir çağrısı ofisten yola çıkmaz. Maslak Meydan yakını kulelerinde lobi turnikesi ve kat kartını bildiğimiz için 10-15 dakikada kata çıkıyoruz — hasarsız kilit açma ve garantili kilit açma ile. Çilingir Maslak hattında plaza ve ofis, konuma en yakın çilingir olarak nöbet tutar; gece kilitlenen ofis sabah toplantısını yakmaz.",
       },
       {
         slug: "maslak1453",

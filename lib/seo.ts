@@ -171,6 +171,77 @@ export function getRegionSeo(slug: string): RegionSeo | null {
   return regionSeo[slug] ?? null;
 }
 
+export type NeighborhoodSeo = {
+  title: string;
+  description: string;
+  keywords: string[];
+  h1Title: string;
+  h1Hit: string;
+  h1Sub: string;
+  lead: string;
+  h2Work: string;
+  h2Services: string;
+  h2Siblings: string;
+  services: string[];
+  jsonLdDescription: string;
+  serviceTypes: string[];
+};
+
+/** Ads-aligned overrides. Key: `${bolge}/${mahalle}`. Only listed pages diverge from the template. */
+export const neighborhoodSeo: Record<string, NeighborhoodSeo> = {
+  "maslak-hatti/maslak": {
+    title: "Maslak Çilingir 15 Dk",
+    description:
+      "Maslak acil çilingir, hasarsız kilit açma. 15 dk kapıda, hemen ara.",
+    keywords: [
+      "maslak çilingir",
+      "çilingir maslak",
+      "maslak cilingir",
+      "cilingir maslak",
+      "maslak acil çilingir",
+      "maslak nöbetçi çilingir",
+      "hasarsız kilit açma",
+      "garantili kilit açma",
+      "en yakın çilingir",
+      "konuma en yakın çilingir",
+    ],
+    h1Title: "Maslak Çilingir",
+    h1Hit: "15 Dk",
+    h1Sub: "Maslak acil çilingir",
+    lead:
+      "Maslak Meydan yakını — hasarsız kilit açma, konuma en yakın çilingir. 10-15 dk mesafede, hemen ara.",
+    h2Work: "Maslak acil çilingir — Çilingir Maslak",
+    h2Services: "Maslak'ta hasarsız kilit açma ve garantili kilit açma",
+    h2Siblings: "Maslak çevresinde en yakın çilingir",
+    services: [
+      "Maslak acil çilingir — plaza, ofis ve araç kapısı",
+      "Hasarsız kilit açma",
+      "Garantili kilit açma",
+      "Maslak nöbetçi çilingir · 7/24 çilingir",
+      "Konuma en yakın çilingir — Maslak plaza hattı",
+      "Maslak gece çilingir",
+    ],
+    jsonLdDescription:
+      "Maslak acil çilingir, hasarsız kilit açma. 15 dk kapıda, hemen ara. Nöbetçi çilingir, garantili kilit açma, en yakın çilingir.",
+    serviceTypes: [
+      "maslak acil çilingir",
+      "hasarsız kilit açma",
+      "garantili kilit açma",
+      "maslak nöbetçi çilingir",
+      "7/24 çilingir",
+      "en yakın çilingir",
+      "maslak gece çilingir",
+    ],
+  },
+};
+
+export function getNeighborhoodSeo(
+  bolge: string,
+  mahalle: string,
+): NeighborhoodSeo | null {
+  return neighborhoodSeo[`${bolge}/${mahalle}`] ?? null;
+}
+
 export function neighborhoodHeadings(name: string) {
   return {
     work: `${name} acil çilingir hizmeti — Çilingir 15 Dk Kapıda`,
