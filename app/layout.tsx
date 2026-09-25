@@ -57,14 +57,14 @@ export default function RootLayout({
         <script
           dangerouslySetInnerHTML={{
             __html: `window.DubixGuardConfig = {
-  token: "dg_live_8111d33972f5788f23e9f6635861ec09c92cc7d5b629ab5b",
+  token: "dg_live_c6869556fdd4d213d49fd4cdb168dd25868fb29210d69f57",
   endpoint: "https://dubixguard.io/api/v1/click",
-  logClickEndpoint: "https://api.dubixguard.io/log-click",
+  logClickEndpoint: "https://dubixguard.io/log-click",
   telemetryEndpoint: "https://track.dubixguard.io/click",
   optOutEndpoint: "https://dubixguard.io/api/v1/opt-out",
   consent: {
     mode: "required",
-    privacyUrl: "https://getircilingir.com.tr/gizlilik-politikasi",
+    privacyUrl: "https://dubixguard.io/privacy",
     locale: "tr"
   }
 };`,
