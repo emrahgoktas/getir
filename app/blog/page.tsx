@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumb } from "@/components/Chrome";
-import { posts, wordCount } from "@/data/posts";
+import { publishedPosts, wordCount } from "@/data/posts";
 import { SITE_URL } from "@/lib/constants";
 
 export const dynamic = "force-static";
@@ -45,7 +45,7 @@ export default function BlogPage() {
       <section className="section wrap">
         <h2>Makaleler</h2>
         <div className="blog-grid">
-          {posts.map((post) => (
+          {publishedPosts().map((post) => (
             <Link
               key={post.slug}
               href={`/blog/${post.slug}`}

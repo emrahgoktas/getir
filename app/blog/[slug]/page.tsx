@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { CallCtas } from "@/components/CallCtas";
 import { Breadcrumb } from "@/components/Chrome";
-import { findPost, getAllPostSlugs, posts, wordCount } from "@/data/posts";
+import { findPost, getAllPostSlugs, isPublishedPost, posts, wordCount } from "@/data/posts";
 import { SITE_NAME, SITE_URL } from "@/lib/constants";
 
 type Props = {
@@ -40,9 +40,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function BlogPostPage({ params }: Props) {
   const { slug } = await params;
   const post = findPost(slug);
-  if (!post) notFound();
+  if (!post || !isPublishedPost(post)) notFound();
 
-  const others = posts.filter((item) => item.slug !== post.slug);
+  const others = posts.filter((item) => item.slug !== post.slug && isPublishedPost(item));
   const pageUrl = `${SITE_URL}/blog/${post.slug}`;
   const jsonLd = {
     "@context": "https://schema.org",

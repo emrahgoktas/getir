@@ -1,3 +1,5 @@
+export type BlogPostStatus = "active" | "inactive" | "draft";
+
 export type BlogPost = {
   slug: string;
   title: string;
@@ -5,6 +7,9 @@ export type BlogPost = {
   date: string;
   readingMinutes: number;
   paragraphs: string[];
+  /** Omitted posts are published. Drafts stay out of the sitemap and the DSA feed. */
+  status?: BlogPostStatus;
+  indexable?: boolean;
 };
 
 export const posts: BlogPost[] = [
@@ -121,8 +126,16 @@ export const posts: BlogPost[] = [
   },
 ];
 
+export function isPublishedPost(post: BlogPost): boolean {
+  return (post.status ?? "active") === "active" && post.indexable !== false;
+}
+
+export function publishedPosts(): BlogPost[] {
+  return posts.filter(isPublishedPost);
+}
+
 export function getAllPostSlugs() {
-  return posts.map((post) => ({ slug: post.slug }));
+  return publishedPosts().map((post) => ({ slug: post.slug }));
 }
 
 export function findPost(slug: string) {
