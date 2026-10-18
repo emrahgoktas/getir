@@ -160,9 +160,8 @@ export default async function NeighborhoodPage({ params }: Props) {
           compact
           live={`${neighborhood.name} · aktif ekibimiz sahada`}
           kicker={
-            seo
-              ? "Maslak nöbetçi çilingir · 7/24 çilingir"
-              : `${region.name} · nöbetçi çilingir · 7/24 çilingir`
+            seo?.kicker ??
+            `${region.name} · nöbetçi çilingir · 7/24 çilingir`
           }
           title={headline.title}
           hit={headline.hit}
@@ -200,7 +199,7 @@ export default async function NeighborhoodPage({ params }: Props) {
               width={1400}
               height={788}
               sizes="(max-width: 768px) 100vw, 72rem"
-              priority={isMaslakLanding}
+              priority={Boolean(seo)}
             />
           </div>
         </section>

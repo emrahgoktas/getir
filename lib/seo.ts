@@ -175,6 +175,7 @@ export type NeighborhoodSeo = {
   title: string;
   description: string;
   keywords: string[];
+  kicker: string;
   h1Title: string;
   h1Hit: string;
   h1Sub: string;
@@ -187,12 +188,64 @@ export type NeighborhoodSeo = {
   serviceTypes: string[];
 };
 
+function landing(p: {
+  name: string;
+  loc: string;
+  minutes: string;
+  landmark: string;
+  scene: string;
+}): NeighborhoodSeo {
+  const description = `${p.name} acil çilingir, hasarsız kilit açma. ${p.minutes} dk kapıda, hemen ara.`;
+  const fold = p.name.toLocaleLowerCase("tr");
+  return {
+    title: `${p.name} Çilingir 15 Dk`,
+    description,
+    keywords: [
+      `${fold} çilingir`,
+      `çilingir ${fold}`,
+      `${fold} acil çilingir`,
+      `${fold} nöbetçi çilingir`,
+      "hasarsız kilit açma",
+      "garantili kilit açma",
+      "en yakın çilingir",
+      "konuma en yakın çilingir",
+    ],
+    kicker: `${p.name} nöbetçi çilingir · 7/24 çilingir`,
+    h1Title: `${p.name} Çilingir`,
+    h1Hit: "15 Dk",
+    h1Sub: `${p.name} acil çilingir`,
+    lead: `${p.landmark} — hasarsız kilit açma, konuma en yakın çilingir. ${p.minutes} dk mesafede, hemen ara.`,
+    h2Work: `${p.name} acil çilingir — Çilingir ${p.name}`,
+    h2Services: `${p.loc} hasarsız kilit açma ve garantili kilit açma`,
+    h2Siblings: `${p.name} çevresinde en yakın çilingir`,
+    services: [
+      `${p.name} acil çilingir — ${p.scene}`,
+      "Hasarsız kilit açma",
+      "Garantili kilit açma",
+      `${p.name} nöbetçi çilingir · 7/24 çilingir`,
+      `Konuma en yakın çilingir — ${p.landmark}`,
+      `${p.name} gece çilingir`,
+    ],
+    jsonLdDescription: `${description} Nöbetçi çilingir, garantili kilit açma, en yakın çilingir.`,
+    serviceTypes: [
+      `${fold} acil çilingir`,
+      "hasarsız kilit açma",
+      "garantili kilit açma",
+      `${fold} nöbetçi çilingir`,
+      "7/24 çilingir",
+      "en yakın çilingir",
+      `${fold} gece çilingir`,
+    ],
+  };
+}
+
 /** Ads-aligned overrides. Key: `${bolge}/${mahalle}`. Only listed pages diverge from the template. */
 export const neighborhoodSeo: Record<string, NeighborhoodSeo> = {
   "maslak-hatti/maslak": {
     title: "Maslak Çilingir 15 Dk",
     description:
       "Maslak acil çilingir, hasarsız kilit açma. 15 dk kapıda, hemen ara.",
+    kicker: "Maslak nöbetçi çilingir · 7/24 çilingir",
     keywords: [
       "maslak çilingir",
       "çilingir maslak",
@@ -233,6 +286,174 @@ export const neighborhoodSeo: Record<string, NeighborhoodSeo> = {
       "maslak gece çilingir",
     ],
   },
+  "maslak-hatti/maslak1453": landing({
+    name: "Maslak 1453",
+    loc: "Maslak 1453'te",
+    minutes: "10-15",
+    landmark: "Maslak 1453 sitesi yakını",
+    scene: "site içi daire ve otopark katı",
+  }),
+  "maslak-hatti/ayazaga": landing({
+    name: "Ayazağa",
+    loc: "Ayazağa'da",
+    minutes: "10-15",
+    landmark: "İTÜ Ayazağa Kampüsü civarı",
+    scene: "İTÜ kampüsü, öğrenci evi ve sanayi kapısı",
+  }),
+  "maslak-hatti/haciosman": landing({
+    name: "Hacıosman",
+    loc: "Hacıosman'da",
+    minutes: "10-14",
+    landmark: "Hacıosman Metro İstasyonu yakını",
+    scene: "metro çıkışı ve son durak apartmanları",
+  }),
+  "maslak-hatti/resitpasa": landing({
+    name: "Reşitpaşa",
+    loc: "Reşitpaşa'da",
+    minutes: "12-15",
+    landmark: "Reşitpaşa Kampüsü yakını",
+    scene: "yokuş site ve kampüs lojmanı",
+  }),
+  "maslak-hatti/vadistanbul": landing({
+    name: "Vadistanbul",
+    loc: "Vadistanbul'da",
+    minutes: "10-15",
+    landmark: "Vadistanbul AVM yakını",
+    scene: "AVM, rezidans ve ofis kulesi",
+  }),
+  "maslak-hatti/darussafaka": landing({
+    name: "Darüşşafaka",
+    loc: "Darüşşafaka'da",
+    minutes: "12-15",
+    landmark: "Darüşşafaka kampüsü yakını",
+    scene: "kampüs çevresi ve site kapısı",
+  }),
+  "maslak-hatti/seyrantepe": landing({
+    name: "Seyrantepe",
+    loc: "Seyrantepe'de",
+    minutes: "10-15",
+    landmark: "Seyrantepe Metro yakını",
+    scene: "metro ve sanayi hattı kapısı",
+  }),
+  "maslak-hatti/poligon": landing({
+    name: "Poligon",
+    loc: "Poligon'da",
+    minutes: "12-15",
+    landmark: "Poligon siteleri yakını",
+    scene: "site bölgesi çelik kapı",
+  }),
+  "maslak-hatti/buyukdere": landing({
+    name: "Büyükdere",
+    loc: "Büyükdere'de",
+    minutes: "10-15",
+    landmark: "Büyükdere Caddesi yakını",
+    scene: "cadde ofisi ve apartman kapısı",
+  }),
+  "sariyer-kuzey/sariyer": landing({
+    name: "Sarıyer",
+    loc: "Sarıyer'de",
+    minutes: "12-15",
+    landmark: "Sarıyer İskelesi yakını",
+    scene: "iskele, sahil apartmanı ve çarşı",
+  }),
+  "sariyer-kuzey/zekeriyakoy": landing({
+    name: "Zekeriyaköy",
+    loc: "Zekeriyaköy'de",
+    minutes: "15-20",
+    landmark: "Zekeriyaköy merkez yakını",
+    scene: "villa sitesi ve güvenlik bariyeri",
+  }),
+  "sariyer-kuzey/kirecburnu": landing({
+    name: "Kireçburnu",
+    loc: "Kireçburnu'nda",
+    minutes: "12-15",
+    landmark: "Kireçburnu sahili yakını",
+    scene: "sahil yokuşu ve yalı kapısı",
+  }),
+  "sariyer-kuzey/tarabya": landing({
+    name: "Tarabya",
+    loc: "Tarabya'da",
+    minutes: "12-15",
+    landmark: "Tarabya üstü ve Tarabya Koyu yakını",
+    scene: "Tarabya üstü site, koy ve otel kapısı",
+  }),
+  "sariyer-kuzey/istinye": landing({
+    name: "İstinye",
+    loc: "İstinye'de",
+    minutes: "10-14",
+    landmark: "İstinye Park yakını",
+    scene: "İstinye Park, ofis kulesi ve sahil konut",
+  }),
+  "sariyer-kuzey/emirgan": landing({
+    name: "Emirgan",
+    loc: "Emirgan'da",
+    minutes: "12-15",
+    landmark: "Emirgan Korusu yakını",
+    scene: "koru, sahil ve tarihi apartman",
+  }),
+  "sariyer-kuzey/boyacikoy": landing({
+    name: "Boyacıköy",
+    loc: "Boyacıköy'de",
+    minutes: "12-15",
+    landmark: "Boyacıköy sahili yakını",
+    scene: "sahil dükkânı ve yokuş evi",
+  }),
+  "sariyer-kuzey/yenikoy": landing({
+    name: "Yeniköy",
+    loc: "Yeniköy'de",
+    minutes: "12-15",
+    landmark: "Yeniköy iskelesi yakını",
+    scene: "iskele, yalı ve sahil apartmanı",
+  }),
+  "sariyer-kuzey/ferahevler": landing({
+    name: "Ferahevler",
+    loc: "Ferahevler'de",
+    minutes: "12-15",
+    landmark: "Ferahevler yokuşu yakını",
+    scene: "yokuş apartmanı ve site kapısı",
+  }),
+  "sariyer-kuzey/baltalimani": landing({
+    name: "Baltalimanı",
+    loc: "Baltalimanı'nda",
+    minutes: "12-15",
+    landmark: "Baltalimanı sahili yakını",
+    scene: "sahil şeridi ve yalı kapısı",
+  }),
+  "levent-etiler/levent": landing({
+    name: "Levent",
+    loc: "Levent'te",
+    minutes: "10-14",
+    landmark: "Levent kuleleri yakını",
+    scene: "plaza lobisi ve ofis katı",
+  }),
+  "levent-etiler/etiler": landing({
+    name: "Etiler",
+    loc: "Etiler'de",
+    minutes: "10-14",
+    landmark: "Etiler siteleri yakını",
+    scene: "site güvenliği ve rezidans kapısı",
+  }),
+  "levent-etiler/akatlar": landing({
+    name: "Akatlar",
+    loc: "Akatlar'da",
+    minutes: "10-14",
+    landmark: "Akatlar siteleri yakını",
+    scene: "site içi daire ve çelik kapı",
+  }),
+  "levent-etiler/ulus": landing({
+    name: "Ulus",
+    loc: "Ulus'ta",
+    minutes: "10-14",
+    landmark: "Ulus Parkı yakını",
+    scene: "park çevresi rezidans ve ofis",
+  }),
+  "levent-etiler/hisarustu": landing({
+    name: "Hisarüstü",
+    loc: "Hisarüstü'nde",
+    minutes: "10-14",
+    landmark: "Hisarüstü metro yakını",
+    scene: "metro çıkışı, Etiler sırtı ve site kapısı",
+  }),
 };
 
 export function getNeighborhoodSeo(

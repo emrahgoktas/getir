@@ -88,7 +88,7 @@ export const regions: Region[] = [
         latitude: 41.1275,
         longitude: 29.0575,
         description:
-          "Tarabya Koyu yakını oteller, yalılar ve arkadaki siteler aynı çağrı havuzunda durur. Koy çevresinde trafik akşam sıkışır; o yüzden aracı koyun iki yakasında dönüşümlü bekletiyoruz. 12-15 dakikalık müdahale, otel odası kilidi kadar site çelik kapısını da kapsıyor.",
+          "Tarabya Koyu yakını oteller, yalılar ve Tarabya üstü siteler aynı çağrı havuzunda durur. Koy çevresinde trafik akşam sıkışır; o yüzden aracı koyun iki yakasında dönüşümlü bekletiyoruz. 12-15 dakikalık müdahale, otel odası kilidi kadar Tarabya üstü site çelik kapısını da kapsıyor.",
       },
       {
         slug: "istinye",
@@ -122,6 +122,39 @@ export const regions: Region[] = [
         longitude: 29.055,
         description:
           "Boyacıköy sahili yakını ince bir şerit; arkadaki yokuşlar ise ayrı bir dünya. Sahilde bekleyen araç, yokuş evlere merdiven ve dar sokak tarifini ezbere biliyor. 12-15 dakikada hem sahil dükkân kepenkine hem konut çelik kapısına yetişiyoruz.",
+      },
+      {
+        slug: "yenikoy",
+        name: "Yeniköy",
+        heroLine: "Yeniköy Çilingir — 15 Dk",
+        referenceLandmark: "Yeniköy iskelesi yakını",
+        avgResponseMinutes: "12-15",
+        latitude: 41.121,
+        longitude: 29.068,
+        description:
+          "Yeniköy iskelesi yakını yalılar ve sahil apartmanları dar bir hatta dizilir. İskele ile yokuş arasındaki aracı 12-15 dakikada kapıda tutuyoruz. Hasarsız kilit açma burada yalı kapısı ve çelik daire göbeği için aynı turda yapılır.",
+      },
+      {
+        slug: "ferahevler",
+        name: "Ferahevler",
+        heroLine: "Ferahevler Çilingir — 15 Dk",
+        referenceLandmark: "Ferahevler yokuşu yakını",
+        avgResponseMinutes: "12-15",
+        latitude: 41.163,
+        longitude: 29.048,
+        description:
+          "Ferahevler yokuşu yakını, Sarıyer merkeze inen dar sokakların konut kuşağıdır. Yokuşu bilmeyen ekip dakikayı kaybeder; aracı mahalle içinde tuttuğumuz için 12-15 dakikada daireye çıkıyoruz. Hasarsız kilit açma ve garantili kilit açma eski apartman silindirinde yerinde biter.",
+      },
+      {
+        slug: "baltalimani",
+        name: "Baltalimanı",
+        heroLine: "Baltalimanı Çilingir — 15 Dk",
+        referenceLandmark: "Baltalimanı sahili yakını",
+        avgResponseMinutes: "12-15",
+        latitude: 41.098,
+        longitude: 29.048,
+        description:
+          "Baltalimanı sahili yakını ince bir kıyı şerididir; arkadaki yalı ve apartman yokuşla ayrılır. Sahile paralel bekleyen araç 12-15 dakikada kapıya iner. Gece çilingir çağrısı koyda kaybolmasın diye ekip bu hatta durur.",
       },
     ],
   },
@@ -356,6 +389,17 @@ export const regions: Region[] = [
         longitude: 29.025,
         description:
           "Ulus Parkı yakını rezidansları, Boğaz manzaralı sitelerin sakin kuşağıdır. Park çevresinde tuttuğumuz araç 10-14 dakikada ilgili kuleye iniyor. Site yönetimleriyle tanışığız; giriş kartı ve otopark katı prosedürü yüzünden dakikaları yakmıyoruz.",
+      },
+      {
+        slug: "hisarustu",
+        name: "Hisarüstü",
+        heroLine: "Hisarüstü Çilingir — 15 Dk",
+        referenceLandmark: "Hisarüstü metro yakını",
+        avgResponseMinutes: "10-14",
+        latitude: 41.085,
+        longitude: 29.032,
+        description:
+          "Hisarüstü metro yakını, Etiler sırtındaki site ve apartman çıkışıdır. Metro ağzında tuttuğumuz araç 10-14 dakikada site kapısına iner. Hasarsız kilit açma gece inen yolcu için burada rutin iştir; ofisten yola çıkmayız.",
       },
       {
         slug: "dikilitas",
