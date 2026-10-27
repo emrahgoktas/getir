@@ -267,7 +267,7 @@ export const neighborhoodSeo: Record<string, NeighborhoodSeo> = {
     h2Services: "Maslak'ta hasarsız kilit açma ve garantili kilit açma",
     h2Siblings: "Maslak çevresinde en yakın çilingir",
     services: [
-      "Maslak acil çilingir — plaza, ofis ve araç kapısı",
+      "Maslak acil çilingir — plaza, ofis ve çelik kapı",
       "Hasarsız kilit açma",
       "Garantili kilit açma",
       "Maslak nöbetçi çilingir · 7/24 çilingir",

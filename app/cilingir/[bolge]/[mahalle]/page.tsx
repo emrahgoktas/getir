@@ -141,7 +141,7 @@ export default async function NeighborhoodPage({ params }: Props) {
     siblings: seo?.h2Siblings ?? defaultHeadings.siblings,
   };
   const serviceItems = seo?.services ?? [
-    "Acil çilingir hizmeti — ev, ofis ve araç kapısı",
+    "Acil çilingir hizmeti — ev, ofis ve çelik kapı",
     "Hasarsız kilit açma",
     "7/24 çilingir ve gece çilingir",
     "Garantili çilingir — kilit değişimi ve tamir",
