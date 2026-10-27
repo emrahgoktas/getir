@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Montserrat } from "next/font/google";
 import { Footer, Header } from "@/components/Chrome";
 import { StickyCallBar } from "@/components/CallCtas";
+import { GoogleAds } from "@/components/GoogleAds";
 import { SITE_NAME, SITE_TAGLINE, SITE_URL, LOGO_PATH } from "@/lib/constants";
 import "./globals.css";
 
@@ -47,6 +48,7 @@ export default function RootLayout({
   return (
     <html lang="tr" className={montserrat.variable}>
       <body className={montserrat.className}>
+        <GoogleAds />
         <div className="site-glow" aria-hidden />
         <div className="page-shell">
           <Header />
