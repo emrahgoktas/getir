@@ -1,8 +1,4 @@
-import {
-  PHONE_DISPLAY,
-  PHONE_HREF,
-  WHATSAPP_HREF,
-} from "@/lib/constants";
+import { PHONE_DISPLAY, PHONE_HREF } from "@/lib/constants";
 
 type CtaVariant = "hero" | "inline";
 
@@ -13,14 +9,6 @@ export function CallCtas({ variant = "hero" }: { variant?: CtaVariant }) {
         Hemen Ara
         <span className="cta-primary__num">{PHONE_DISPLAY}</span>
       </a>
-      <a
-        className="cta-secondary"
-        href={WHATSAPP_HREF}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        WhatsApp
-      </a>
     </div>
   );
 }
@@ -30,14 +18,7 @@ export function StickyCallBar() {
     <div className="sticky-call" role="region" aria-label="Hızlı arama">
       <a className="cta-primary sticky-call__btn" href={PHONE_HREF}>
         Hemen Ara
-      </a>
-      <a
-        className="cta-secondary sticky-call__btn"
-        href={WHATSAPP_HREF}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        WhatsApp
+        <span className="cta-primary__num">{PHONE_DISPLAY}</span>
       </a>
     </div>
   );

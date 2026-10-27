@@ -7,7 +7,6 @@ import {
   PHONE_DISPLAY,
   PHONE_HREF,
   SITE_NAME,
-  WHATSAPP_HREF,
 } from "@/lib/constants";
 
 const FOOTER_TICKER =
@@ -106,14 +105,6 @@ export function Footer() {
             <a className="cta-primary" href={PHONE_HREF}>
               Hemen Ara
               <span className="cta-primary__num">{PHONE_DISPLAY}</span>
-            </a>
-            <a
-              className="cta-secondary"
-              href={WHATSAPP_HREF}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              WhatsApp
             </a>
           </div>
         </div>
