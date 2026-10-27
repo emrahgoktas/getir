@@ -79,7 +79,6 @@ export default function ContactPage() {
             </p>
             <ul className="service-list">
               <li>Telefon: {PHONE_DISPLAY}</li>
-              <li>WhatsApp: {PHONE_DISPLAY}</li>
               <li>Saat: 7/24 çilingir — 00:00–23:59</li>
               <li>Bölge: İstanbul kuzey hattı</li>
             </ul>

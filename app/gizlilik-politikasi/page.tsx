@@ -37,8 +37,8 @@ export default function PrivacyPage() {
           <h2>1. Hangi verileri işleriz</h2>
           <p>
             Acil çilingir hizmeti çağrısında ad, telefon, mahalle / hat
-            bilgisi ve mesaj metni işlenir. İletişim formu WhatsApp
-            üzerinden iletilir; arama kayıtları telefon operatörü ve
+            bilgisi ve mesaj metni işlenir. İletişim formu üzerinden
+            iletilen bilgiler ve arama kayıtları telefon operatörü ile
             cihazınızda oluşabilir. Site kullanımı sırasında IP adresi,
             tarayıcı türü, sayfa gezintisi ve reklam tıklama sinyalleri
             (DubixGuard ve bağlı reklam araçları) işlenebilir.
@@ -53,8 +53,8 @@ export default function PrivacyPage() {
           </p>
           <h2>3. Aktarım</h2>
           <p>
-            WhatsApp (Meta), telefon şebekesi, barındırma (Vercel) ve
-            tıklama koruması (DubixGuard) hizmetlerinde veri işlenebilir.
+            Telefon şebekesi, barındırma (Vercel) ve tıklama koruması
+            (DubixGuard) hizmetlerinde veri işlenebilir.
             Yurt dışı aktarım, ilgili sağlayıcıların altyapısına bağlı
             olabilir. Veri, hizmetin görülmesi dışında satılmaz.
           </p>
