@@ -2,7 +2,7 @@ import Image from "next/image";
 import type { ReactNode } from "react";
 import { CallCtas } from "@/components/CallCtas";
 import { regions } from "@/data/regions";
-import { LOGO_PATH } from "@/lib/constants";
+import { LOGO_MARK_PATH } from "@/lib/constants";
 
 type StageHeroProps = {
   live?: string;
@@ -35,7 +35,7 @@ export function splitStageHeadline(h1: string): { title: string; hit: string } {
     return { title: h1.slice(0, dash), hit: h1.slice(dash + 3) };
   }
 
-  return { title: h1, hit: "15 Dk Kapıda" };
+  return { title: h1, hit: "7/24 Kapı Açma" };
 }
 
 export function tickerPhrase(names: string[]) {
@@ -95,12 +95,13 @@ export function StageHero({
           <div className="stage-meter__spin stage-meter__spin--slow" />
           <div className="stage-meter__core">
             <Image
-              src={LOGO_PATH}
+              src={LOGO_MARK_PATH}
               alt=""
               width={72}
               height={72}
               className="stage-meter__logo"
               priority
+              unoptimized
             />
             <p
               className={

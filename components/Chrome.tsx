@@ -3,7 +3,7 @@ import Link from "next/link";
 import { regions } from "@/data/regions";
 import {
   LOGO_ALT,
-  LOGO_PATH,
+  LOGO_MARK_PATH,
   PHONE_DISPLAY,
   PHONE_HREF,
   SITE_NAME,
@@ -25,11 +25,12 @@ export function BrandMark({
   return (
     <span className="brand__mark">
       <Image
-        src={LOGO_PATH}
+        src={LOGO_MARK_PATH}
         alt={LOGO_ALT}
         width={size}
         height={size}
         priority={priority}
+        unoptimized
       />
     </span>
   );
