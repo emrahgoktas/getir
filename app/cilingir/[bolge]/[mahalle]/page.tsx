@@ -259,7 +259,7 @@ export default async function NeighborhoodPage({ params }: Props) {
               width={1200}
               height={675}
               sizes="(max-width: 768px) 100vw, 72rem"
-              priority={Boolean(seo)}
+              loading="lazy"
             />
           </div>
         </section>
