@@ -12,4 +12,6 @@ export const PHONE_HREF = `tel:${PHONE_TEL}`;
 export const WHATSAPP_HREF = `https://wa.me/${PHONE_WHATSAPP}`;
 
 export const LOGO_PATH = "/getirlogo.png";
+/** UI mark — lightweight SVG; keep LOGO_PATH for OG/icons. */
+export const LOGO_MARK_PATH = "/logo.svg";
 export const LOGO_ALT = "Getir Çilingir logosu";

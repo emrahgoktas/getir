@@ -321,7 +321,7 @@ button:focus-visible {
 
 .legal-page .article-body h2 {
   font-size: 1.15rem;
-  font-weight: 800;
+  font-weight: 700;
   margin: 1.6rem 0 0.55rem;
   color: var(--paper);
 }
@@ -373,7 +373,7 @@ button:focus-visible {
   min-height: 2.4rem;
   padding: 0.45rem 0.85rem 0.45rem 0.65rem;
   font-size: 0.78rem;
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: 0.04em;
   text-decoration: none;
   color: var(--signal-ink) !important;
@@ -430,7 +430,7 @@ button:focus-visible {
 .footer-nav--legal a {
   color: var(--mute);
   font-size: 0.82rem;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .blog-grid {
@@ -511,7 +511,7 @@ button:focus-visible {
   color: var(--mute);
   font-size: 0.92rem;
   line-height: 1.55;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .contact-form__note a,
@@ -529,7 +529,7 @@ button:focus-visible {
 
 .site-footer__brand {
   margin: 0;
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: -0.03em;
   font-size: 1.15rem;
 }
@@ -596,7 +596,7 @@ button:focus-visible {
   display: inline-block;
   white-space: nowrap;
   font-size: 0.7rem;
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: 0.28em;
   text-transform: uppercase;
   color: rgba(255, 210, 216, 0.72);
@@ -622,7 +622,7 @@ button:focus-visible {
 .deck__promise {
   margin: 0.2rem 0 0;
   font-size: 0.82rem;
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: 0.04em;
   background: var(--grad-text);
   -webkit-background-clip: text;
@@ -634,7 +634,7 @@ button:focus-visible {
   display: inline-block;
   margin-top: 1rem;
   font-size: clamp(1.55rem, 4vw, 2.35rem);
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: -0.04em;
   line-height: 1;
   text-decoration: none;
@@ -676,7 +676,7 @@ button:focus-visible {
 .deck__label {
   margin: 0 0 0.75rem;
   font-size: 0.68rem;
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: #ffb3bc;
@@ -709,7 +709,7 @@ button:focus-visible {
 .deck-hat__time {
   flex-shrink: 0;
   font-size: 0.72rem;
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--signal-bright);
@@ -846,7 +846,7 @@ button:focus-visible {
 
 .cta-primary__num {
   font-size: 0.72rem;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.06em;
   opacity: 0.85;
 }
@@ -906,7 +906,7 @@ button:focus-visible {
 
 .time-badge__value {
   font-size: clamp(2.8rem, 8vw, 5.5rem);
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: -0.06em;
   line-height: 0.9;
   background: var(--grad-text);
@@ -1038,7 +1038,7 @@ button:focus-visible {
 
 .stage h1 {
   margin: 0.35rem 0 0;
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: -0.055em;
   line-height: 0.92;
   font-size: clamp(2.35rem, 9vw, 5.4rem);
@@ -1196,7 +1196,7 @@ button:focus-visible {
 .stage-meter__num {
   margin: 0;
   font-size: clamp(3.6rem, 12vw, 6.2rem);
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: -0.08em;
   line-height: 0.8;
   background: var(--grad-text);
@@ -1213,7 +1213,7 @@ button:focus-visible {
 .stage-meter__unit {
   margin: 0.2rem 0 0;
   font-size: 0.72rem;
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: #ffb3bc;
@@ -1237,7 +1237,7 @@ button:focus-visible {
   display: inline-block;
   white-space: nowrap;
   font-size: 0.72rem;
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: 0.28em;
   text-transform: uppercase;
   color: rgba(255, 210, 216, 0.7);
@@ -1315,7 +1315,7 @@ button:focus-visible {
 }
 
 .hero h1 {
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: -0.045em;
   line-height: 1.05;
   font-size: clamp(1.55rem, 7.2vw, 3.6rem);
@@ -1342,7 +1342,7 @@ button:focus-visible {
 
 .section h2 {
   font-size: clamp(1.35rem, 3vw, 1.9rem);
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: -0.03em;
   margin-bottom: 1.35rem;
 }
@@ -1395,7 +1395,7 @@ button:focus-visible {
 
 .keyword-card h3 {
   font-size: clamp(1rem, 2.4vw, 1.12rem);
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: -0.02em;
   line-height: 1.35;
   margin-bottom: 0.55rem;
@@ -1458,7 +1458,7 @@ button:focus-visible {
 .region-card h2,
 .region-card h3 {
   font-size: 1.28rem;
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: -0.03em;
   margin: 0.55rem 0 0.7rem;
 }
@@ -1541,7 +1541,7 @@ button:focus-visible {
   padding: 1.25rem 0 0;
   color: var(--mute);
   font-size: 0.86rem;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .breadcrumb li:not(:last-child)::after {
@@ -1591,6 +1591,97 @@ button:focus-visible {
   width: 100%;
   height: auto;
   display: block;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.area-local {
+  display: grid;
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 640px) {
+  .area-local {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.area-local__label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--mute);
+  margin-bottom: 0.55rem;
+}
+
+.area-local__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.4rem;
+}
+
+.area-local__list li {
+  position: relative;
+  padding-left: 1rem;
+  color: var(--paper);
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+.area-local__list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 0.4rem;
+  height: 0.4rem;
+  background: var(--signal);
+}
+
+.faq-list {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.faq-item {
+  border: 1px solid var(--line);
+  background: rgba(37, 37, 40, 0.72);
+  padding: 0.85rem 1rem;
+}
+
+.faq-item summary {
+  cursor: pointer;
+  font-weight: 700;
+  list-style: none;
+  color: var(--paper);
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary::after {
+  content: "+";
+  float: right;
+  color: var(--signal-bright);
+  font-weight: 700;
+}
+
+.faq-item[open] summary::after {
+  content: "–";
+}
+
+.faq-item p {
+  margin: 0.75rem 0 0;
+  color: var(--mute);
+  line-height: 1.55;
+  font-size: 0.95rem;
 }
 
 .trust-row {
@@ -1618,7 +1709,7 @@ button:focus-visible {
 
 .trust-item h2 {
   font-size: 1.02rem;
-  font-weight: 800;
+  font-weight: 700;
   margin-bottom: 0.35rem;
   line-height: 1.3;
 }

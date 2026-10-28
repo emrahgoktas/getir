@@ -28,7 +28,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: seo.title,
     description: seo.description,
     keywords: [
-      "Çilingir 15 Dk Kapıda",
+      "kapı açma",
+      "kilit değişimi",
       "acil çilingir hizmeti",
       "nöbetçi çilingir",
       "7/24 çilingir",

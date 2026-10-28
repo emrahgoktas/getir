@@ -14,6 +14,11 @@ export type Neighborhood = {
   description: string;
 };
 
+/** Display title pattern for area landing pages (meta + H1 base). */
+export function areaPageTitle(name: string) {
+  return `${name} Çilingir | 7/24 Kapı Açma & Kilit Değişimi`;
+}
+
 export type Region = {
   slug: string;
   name: string;
@@ -126,35 +131,35 @@ export const regions: Region[] = [
       {
         slug: "yenikoy",
         name: "Yeniköy",
-        heroLine: "Yeniköy Çilingir — 15 Dk",
+        heroLine: "Yeniköy Çilingir — İskele ve Yalı Hattı",
         referenceLandmark: "Yeniköy iskelesi yakını",
         avgResponseMinutes: "12-15",
         latitude: 41.121,
         longitude: 29.068,
         description:
-          "Yeniköy iskelesi yakını yalılar ve sahil apartmanları dar bir hatta dizilir. İskele ile yokuş arasındaki aracı 12-15 dakikada kapıda tutuyoruz. Hasarsız kilit açma burada yalı kapısı ve çelik daire göbeği için aynı turda yapılır.",
+          "Yeniköy iskelesi yakını yalılar ve sahil apartmanları dar bir hatta dizilir. İskele ile yokuş arasındaki kuşakta kapı açma, barel değişimi ve çelik daire göbeği aynı turda konuşulur.",
       },
       {
         slug: "ferahevler",
         name: "Ferahevler",
-        heroLine: "Ferahevler Çilingir — 15 Dk",
+        heroLine: "Ferahevler Çilingir — Yokuş Konut Hattı",
         referenceLandmark: "Ferahevler yokuşu yakını",
         avgResponseMinutes: "12-15",
         latitude: 41.163,
         longitude: 29.048,
         description:
-          "Ferahevler yokuşu yakını, Sarıyer merkeze inen dar sokakların konut kuşağıdır. Yokuşu bilmeyen ekip dakikayı kaybeder; aracı mahalle içinde tuttuğumuz için 12-15 dakikada daireye çıkıyoruz. Hasarsız kilit açma ve garantili kilit açma eski apartman silindirinde yerinde biter.",
+          "Ferahevler yokuşu yakını, Sarıyer merkeze inen dar sokakların konut kuşağıdır. Yokuşu bilen saha ekibi mahalle içinde yönlenir; hasarsız kilit açma ve barel değişimi eski apartman silindirinde yerinde biter.",
       },
       {
         slug: "baltalimani",
         name: "Baltalimanı",
-        heroLine: "Baltalimanı Çilingir — 15 Dk",
+        heroLine: "Baltalimanı Çilingir — Sahil Şeridi",
         referenceLandmark: "Baltalimanı sahili yakını",
         avgResponseMinutes: "12-15",
         latitude: 41.098,
         longitude: 29.048,
         description:
-          "Baltalimanı sahili yakını ince bir kıyı şerididir; arkadaki yalı ve apartman yokuşla ayrılır. Sahile paralel bekleyen araç 12-15 dakikada kapıya iner. Gece çilingir çağrısı koyda kaybolmasın diye ekip bu hatta durur.",
+          "Baltalimanı sahili yakını ince bir kıyı şerididir; arkadaki yalı ve apartman yokuşla ayrılır. Sahile paralel yaklaşımla kapı açma ve çelik kapı işi bu hatta yürür; gece çağrısı koyda kaybolmasın diye adres sahil / yokuş diye netleştirilir.",
       },
     ],
   },
@@ -171,46 +176,57 @@ export const regions: Region[] = [
       {
         slug: "maslak",
         name: "Maslak",
-        heroLine: "Maslak Çilingir — 15 Dk",
+        heroLine: "Maslak Çilingir — Plaza ve Ofis Hattı",
         referenceLandmark: "Maslak Meydan yakını",
         avgResponseMinutes: "10-15",
         latitude: 41.1075,
         longitude: 29.0225,
         description:
-          "Maslak acil çilingir çağrısı ofisten yola çıkmaz. Maslak Meydan yakını kulelerinde lobi turnikesi ve kat kartını bildiğimiz için 10-15 dakikada kata çıkıyoruz — hasarsız kilit açma ve garantili kilit açma ile. Çilingir Maslak hattında plaza ve ofis, konuma en yakın çilingir olarak nöbet tutar; gece kilitlenen ofis sabah toplantısını yakmaz.",
+          "Maslak acil çilingir çağrısı uzak bir merkeze düşmez. Maslak Meydan yakını kulelerinde lobi turnikesi ve kat kartı prosedürü bilinir; hasarsız kilit açma, barel değişimi ve çelik kapı aynı hatta yürür. Gece kilitlenen ofis, sabah toplantısından önce bu saha hattında çözülür.",
+      },
+      {
+        slug: "itu",
+        name: "İTÜ",
+        heroLine: "İTÜ Çilingir — Ayazağa Kampüs Çevresi",
+        referenceLandmark: "İTÜ Ayazağa Kampüsü yakını",
+        avgResponseMinutes: "10-15",
+        latitude: 41.1056,
+        longitude: 29.0253,
+        description:
+          "İTÜ Ayazağa kampüs çevresi, öğrenci evi, lojman ve kampüse komşu apartmanların iç içe geçtiği bir kuşaktır. Kapı açma, kilit / barel değişimi, çelik kapı ve kasa açma bu çevrede konut ve lojman stoğuna göre ayrılır; kampüs güvenlik kurallarına uyulur.",
       },
       {
         slug: "maslak1453",
         name: "Maslak 1453",
-        heroLine: "Maslak 1453'te Çilingir — Site İçi Hızlı Ulaşım",
+        heroLine: "Maslak 1453'te Çilingir — Site İçi Hizmet",
         referenceLandmark: "Maslak 1453 sitesi yakını",
         avgResponseMinutes: "10-15",
         latitude: 41.115,
         longitude: 29.0175,
         description:
-          "Maslak 1453 sitesi yakını, güvenlik ve otopark katları olmadan adrese varmak mümkün olmayan bir yerleşim. Site yönetimleriyle çalıştığımız için girişte vakit kaybetmiyoruz; 10-15 dakikada daire kapısına iniyoruz. Rezidans çelik kapı ve akıllı kilit arızaları burada standart iş kalemi.",
+          "Maslak 1453 sitesi yakını, güvenlik ve otopark katları olmadan adrese varmanın zor olduğu bir yerleşimdir. Site yönetimleriyle koordinasyon girişte vakit kaybını azaltır. Rezidans çelik kapı ve akıllı kilit arızaları burada standart iş kalemidir.",
       },
       {
         slug: "skyland",
         name: "Skyland İstanbul",
-        heroLine: "Skyland'de Çilingir — Kule ve Rezidans Bölgesine Özel Ekip",
+        heroLine: "Skyland'de Çilingir — Kule ve Rezidans",
         referenceLandmark: "Skyland AVM yakını",
         avgResponseMinutes: "10-15",
         latitude: 41.112,
         longitude: 29.015,
         description:
-          "Skyland AVM yakını, alışveriş, ofis ve konutun aynı kulede durduğu bir karma. Vale ve kat görevlisiyle koordinasyon alışkanlığımız var; 10-15 dakikada ilgili kule asansörüne alınıyoruz. Dükkân kepengi ile daire kilidi aynı çağrıda gelebilir — ikisini de açıyoruz.",
+          "Skyland AVM yakını, alışveriş, ofis ve konutun aynı kulede durduğu bir karmadır. Vale ve kat görevlisiyle koordinasyon, ilgili kule asansörüne inmeyi kolaylaştırır. Dükkân kepengi ile daire kilidi aynı çağrıda gelebilir.",
       },
       {
         slug: "ayazaga",
         name: "Ayazağa",
-        heroLine: "Ayazağa'da Çilingir — Kampüs ve Sanayi Bölgesine Hızlı Ulaşım",
-        referenceLandmark: "İTÜ Ayazağa Kampüsü civarı",
+        heroLine: "Ayazağa'da Çilingir — Kampüs ve Mahalle",
+        referenceLandmark: "Ayazağa mahalle merkezi yakını",
         avgResponseMinutes: "10-15",
         latitude: 41.1075,
         longitude: 29.0225,
         description:
-          "İTÜ Ayazağa Kampüsü civarı, öğrenci evi, laboratuvar ve küçük sanayi kilitinin karıştığı bir kuşaktır. Kampüs giriş saatlerini ve çevre sokakları bildiğimiz için 10-15 dakikada adrese varıyoruz. Gece laboratuvar kapısı ile sabah ev kilidi aynı ekipte çözülüyor.",
+          "Ayazağa, İTÜ kampüsüne komşu konut ile küçük işyeri kapılarının karıştığı bir mahalledir. Öğrenci evi, laboratuvar çevresi ve apartman silindiri aynı günde gelebilir; İTÜ odaklı sayfa kampüs çevresini ayrıca anlatır.",
       },
       {
         slug: "haciosman",
@@ -393,13 +409,13 @@ export const regions: Region[] = [
       {
         slug: "hisarustu",
         name: "Hisarüstü",
-        heroLine: "Hisarüstü Çilingir — 15 Dk",
+        heroLine: "Hisarüstü Çilingir — Metro ve Etiler Sırtı",
         referenceLandmark: "Hisarüstü metro yakını",
         avgResponseMinutes: "10-14",
         latitude: 41.085,
         longitude: 29.032,
         description:
-          "Hisarüstü metro yakını, Etiler sırtındaki site ve apartman çıkışıdır. Metro ağzında tuttuğumuz araç 10-14 dakikada site kapısına iner. Hasarsız kilit açma gece inen yolcu için burada rutin iştir; ofisten yola çıkmayız.",
+          "Hisarüstü metro yakını, Etiler sırtındaki site ve apartman çıkışıdır. Metro ağzı referans alınarak site kapılarına çıkılır. Hasarsız kilit açma gece inen yolcu için burada rutin iştir; uzak bir merkezden yola çıkılmaz.",
       },
       {
         slug: "dikilitas",
